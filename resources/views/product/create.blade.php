@@ -53,24 +53,33 @@
 <body>
     <h1>Ajouter un Produit</h1>
     
-    <form action="#" method="POST">
+    <form action="{{route('products.store')}}" method="POST">
         <!-- TODO: Ajouter un token CSRF -->
-        
+        @csrf
+
         <label for="name">Nom</label>
-        <input type="text" id="name" name="name" placeholder="Entrez le nom du produit">
+        <input type="text" id="name" name="name" placeholder="Entrez le nom du produit" value="mon nom" required>
         
         <!-- TODO: Ajouter un input pour la description -->
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" placeholder="Entrez la description" value="mon nom"required>
         
         <!-- TODO: Ajouter un input pour le prix -->
+        <label for="price">Prix</label>
+        <input type="text" id="price" name="price" placeholder="Entrez le prix" value="19" required>
         
         <!-- TODO: Ajouter un input pour le stock -->
+        <label for="stock">Stock</label>
+        <input type="text" id="stock" name="stock" placeholder="Entrez le stock" value="20"required>
         
         <!-- TODO: Ajouter un input pour la catégorie -->
+        <label for="category">Categorie</label>
+        <input type="text" id="category" name="category" placeholder="Entrez la catégorie" value="mon nom" required>
         
         <button type="submit">Ajouter</button>
     </form>
     
-    <a href="#">Retour à la liste</a>
+    <a href="{{route('products.index')}}">Retour à la liste</a>
     
 </body>
 </html>

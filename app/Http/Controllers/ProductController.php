@@ -34,6 +34,20 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        //Valider et enregistrer un nouveau post*/
+        $validated = $request->validate(['name' => 'required',
+                                        'description' => 'required',
+                                        'price'=>'required',
+                                        'stock'=>'required',
+                                        'category'=>'required'
+        ]);
+
+        // Enregistrer le post en base de données
+        Product::create($validated);
+
+        // Rediriger vers la liste avec un message de succès
+        return redirect()->route('products.index')->with('success', 'Post créé avec succès !');
+    
     }
 
     /**

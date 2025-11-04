@@ -45,7 +45,7 @@
 <body>
     <h1>Liste des Produits</h1>
     
-    <a href="#" class="btn">Ajouter un produit</a>
+    <a href="{{route('products.create')}}" class="btn">Ajouter un produit</a>
     
     <table>
         <thead>
